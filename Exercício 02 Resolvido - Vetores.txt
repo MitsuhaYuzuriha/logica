@@ -1,0 +1,64 @@
+Resolvendo o problema
+
+0. Declarar um vetor de 10 posições
+0.1. Declarar variáveis
+1. Pedir ao usuário que entre com os números
+2. Ler uma matrícula
+3. Tentar Cadastrar a matrícula
+4. Verificar se está no intervalo de 100 a 200
+5. Se não estiver, mensagem de erro / aviso
+6. Se estiver, verificar se já não existe
+7. Se existir, mensagem de erro / aviso
+8. Se não existir, efetiva o cadastro da matrícula
+9. Cadastrar próxima matrícula → volta ao passo 1
+10. Repetir 10x
+11. Após cadastrar todas as matrículas: 
+12. Ordená-las
+13. Mostrar na tela
+14. Fim
+
+Código:
+
+programa
+{
+	
+inteiro alunos[10]
+	inteiro mat, pos, cont
+	caracter controle = 's'
+	funcao inicio()
+	{
+		para(pos = 0; pos < 10; pos++) {
+			enquanto(verdadeiro) {
+				escreva("Digite a matrícula: ")
+				leia(mat)
+				
+				// Verificar se matrícula já existe
+				para(cont = 0; cont < 10; cont++) {
+					se(mat == alunos[cont]) {
+						escreva("Valor já existe! Digite outro\n")
+						controle = 'n'
+					}
+				}
+	
+				// Verifica se número no intervalo válido
+				se ((mat < 100) ou (mat > 200)) {
+					escreva("Valor inválido!\n")
+					controle = 'n'
+				}
+	
+				// Se matrícula válida, efetivá-la
+				se (controle != 'n') {
+					alunos[pos] = mat
+					pare
+				}
+
+				// Libera o cadastro de dados no vetor
+				controle = 's'
+			}
+			
+		}
+
+		// Ordenar valores e exibi-los na tela:
+		
+	}
+}
